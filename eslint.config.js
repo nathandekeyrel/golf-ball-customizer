@@ -10,14 +10,24 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        THREE: 'readonly',
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: {
+      react: { version: '18.3' },
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx']
+        }
+      }
+    },
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -33,6 +43,26 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      'react/no-unknown-property': ['error', {
+        ignore: [
+          'args',
+          'object',
+          'geometry',
+          'material',
+          'rotation',
+          'position',
+          'scale',
+          'castShadow',
+          'receiveShadow',
+          'dispose',
+          'intensity',
+          'primitive'
+        ]
+      }],
+      'react/prop-types': 'off',
+      'react/jsx-props-no-spreading': 'off',
     },
   },
 ]
