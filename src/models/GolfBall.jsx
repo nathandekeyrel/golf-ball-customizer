@@ -6,16 +6,46 @@ Source: https://sketchfab.com/3d-models/golf-ball-lp-aa9182956c494e7e92c3fde035a
 Title: Golf Ball LP
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
-import golfBallModel from '../assets/3d/golf_ball_lp.glb'
+import React, { useRef, useEffect } from 'react';
+import { useGLTF } from '@react-three/drei';
+import * as THREE from 'three';
+import golfBallModel from '../assets/3d/golf_ball_lp.glb';
 
-const GolfBall = (props) => {
-    const { nodes, materials } = useGLTF(golfBallModel)
+const GolfBall = ({ color, logo, brand, ...props }) => {
+    const { nodes, materials } = useGLTF(golfBallModel);
+    const meshRef = useRef(null);
+
+    useEffect(() => {
+        if (meshRef.current) {
+            const newMaterial = materials.lambert2SG.clone();
+            newMaterial.color = new THREE.Color(color);
+
+            if (logo) {
+                const texture = new THREE.TextureLoader().load(logo);
+                texture.encoding = THREE.sRGBEncoding;
+                newMaterial.map = texture;
+            }
+            switch(brand) {
+                case 'pro-v1':
+                    newMaterial.roughness = 0.2;
+                    newMaterial.metalness = 0.6;
+                    break;
+                case 'tour-soft':
+                    newMaterial.roughness = 0.4;
+                    newMaterial.metalness = 0.4;
+                    break;
+                default:
+                    newMaterial.roughness = 0.6;
+                    newMaterial.metalness = 0.2;
+            }
+            meshRef.current.material = newMaterial;
+        }
+    }, [color, logo, brand, materials.lambert2SG]);
 
     return (
-        <group {...props} dispose={null} scale={.5}>
+        <group {...props} dispose={null} scale={.25}>
             <mesh
+                ref={meshRef}
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_2.geometry}
