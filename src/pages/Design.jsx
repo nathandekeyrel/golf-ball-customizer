@@ -55,7 +55,7 @@ const Design = () => {
         if (color !== 'white') total += COLOR_PRICE;
         if (logo) total += LOGO_PRICE;
         return total;
-    }, [BRAND_PRICES, brand, color, logo]);
+    }, [brand, color, logo]);
 
     const colorMap = {
         white: '#FFFFFF',
@@ -94,11 +94,11 @@ const Design = () => {
 
             <div className="w-1/3 bg-white p-8 overflow-y-auto">
                 <div className="max-w-md mx-auto">
-                    <h2 className="text-3xl font-bold mb-8 text-gray-800">Customize Your Ball</h2>
+                    <h2 className="design-header">Customize Your Ball</h2>
 
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h3 className="text-xl font-semibold text-gray-700">Brand</h3>
+                            <h3 className="design-section-header">Brand</h3>
                             <div className="grid grid-cols-1 gap-3">
                                 {Object.entries(BRAND_PRICES).map(([brandOption, { price, quantity }]) => (
                                     <label
@@ -106,8 +106,8 @@ const Design = () => {
                                         className={`
                                             flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all
                                             ${brand === brandOption
-                                            ? 'border-blue-500 bg-blue-50'
-                                            : 'border-gray-200 hover:border-blue-200'}
+                                            ? 'design-option-selected'
+                                            : 'design-option-not-selected'}
                                         `}
                                     >
                                         <input
@@ -132,10 +132,10 @@ const Design = () => {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-xl font-semibold text-gray-700 flex justify-between items-center">
+                            <h3 className="design-section-header flex justify-between items-center">
                                 <span>Color</span>
                                 {color !== 'white' && (
-                                    <span className="text-sm text-gray-600">+${COLOR_PRICE}</span>
+                                    <span className="design-price">+${COLOR_PRICE}</span>
                                 )}
                             </h3>
                             <div className="grid grid-cols-2 gap-3">
@@ -145,8 +145,8 @@ const Design = () => {
                                         className={`
                                             flex items-center p-3 rounded-lg border-2 cursor-pointer transition-all
                                             ${color === colorName
-                                            ? 'border-blue-500 bg-blue-50'
-                                            : 'border-gray-200 hover:border-blue-200'}
+                                            ? 'design-option-selected'
+                                            : 'design-option-not-selected'}
                                         `}
                                     >
                                         <input
@@ -170,9 +170,9 @@ const Design = () => {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-xl font-semibold text-gray-700 flex justify-between items-center">
+                            <h3 className="design-section-header flex justify-between items-center">
                                 <span>Upload Logo</span>
-                                {logo && <span className="text-sm text-gray-600">+${LOGO_PRICE}</span>}
+                                {logo && <span className="design-price">+${LOGO_PRICE}</span>}
                             </h3>
                             <div className="mt-2">
                                 <label className="block">
@@ -181,13 +181,7 @@ const Design = () => {
                                         type="file"
                                         onChange={handleLogoUpload}
                                         accept="image/png, image/jpeg"
-                                        className="block w-full text-sm text-gray-500
-                                            file:mr-4 file:py-2 file:px-4
-                                            file:rounded-md file:border-0
-                                            file:text-sm file:font-semibold
-                                            file:bg-blue-50 file:text-blue-700
-                                            hover:file:bg-blue-100
-                                            cursor-pointer"
+                                        className="file-style"
                                     />
                                 </label>
                                 {logo && (
@@ -204,13 +198,12 @@ const Design = () => {
                                     <span className="font-semibold text-gray-700">Total Price:</span>
                                     <span className="font-bold text-gray-900">${totalPrice}</span>
                                 </div>
-                                <p className="text-sm text-gray-600">
+                                <p className="design-price">
                                     ${(totalPrice / BRAND_PRICES[brand].quantity).toFixed(2)} per ball
                                 </p>
                             </div>
                             <button
-                                className="w-full mt-4 bg-blue-600 text-white py-3 px-4 rounded-lg
-                                font-semibold hover:bg-blue-700 transition-colors"
+                                className="checkout-btn"
                                 onClick={handleCheckout}
                             >
                                 Proceed to Checkout
