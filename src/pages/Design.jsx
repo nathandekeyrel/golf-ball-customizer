@@ -62,8 +62,6 @@ const Design = () => {
         black: '#000000',
         red: '#FF0000',
         yellow: '#FFFF00',
-        green: '#008000',
-        blue: '#0000FF'
     };
 
     return (
@@ -92,7 +90,7 @@ const Design = () => {
                 </Canvas>
             </div>
 
-            <div className="w-1/3 bg-white p-8 overflow-y-auto">
+            <div className="w-1/3 bg-white p-6 overflow-y-auto">
                 <div className="max-w-md mx-auto">
                     <h2 className="design-header">Customize Your Ball</h2>
 
@@ -104,7 +102,7 @@ const Design = () => {
                                     <label
                                         key={brandOption}
                                         className={`
-                                            flex items-center p-4 rounded-lg border-2 cursor-pointer transition-all
+                                            flex items-center p-3 rounded-lg border-2 cursor-pointer transition-all
                                             ${brand === brandOption
                                             ? 'design-option-selected'
                                             : 'design-option-not-selected'}
@@ -192,7 +190,7 @@ const Design = () => {
                             </div>
                         </div>
 
-                        <div className="mt-8 pt-6 border-t border-gray-200">
+                        <div className="mt-6 pt-2 border-t border-gray-200">
                             <div className="space-y-2">
                                 <div className="flex justify-between text-lg">
                                     <span className="font-semibold text-gray-700">Total Price:</span>

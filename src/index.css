@@ -4,7 +4,7 @@
 
 @layer components {
     .checkout-btn {
-        @apply w-full mt-4 bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors;
+        @apply w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors;
     }
 
     .file-style {
@@ -31,5 +31,9 @@
 
     .design-price {
         @apply text-sm text-gray-600;
+    }
+
+    .blue-gradient_text {
+        @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
     }
 }

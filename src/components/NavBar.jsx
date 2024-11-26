@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <header className='header flex justify-between items-center p-4'>
             <div>
-                <NavLink to="/" className="w-10 h-10 rounded-lg bg-white
+                <NavLink to="/" className="w-12 h-8 rounded-lg bg-white
                 items-center justify-center flex font-bold shadow-md">
                     <p className="blue-gradient_text">Home</p>
                 </NavLink>
