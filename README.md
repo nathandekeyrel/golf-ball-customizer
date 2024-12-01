@@ -1,8 +1,8 @@
 # Custom Golf Ball Shop
 
 An interactive web application for designing and purchasing customized golf balls, built with React and Three.js.
-[Website Link](https://golf-ball-customizer.fly.dev/) 
-  -- Note: This website's hosting is usually suspended to save money.
+<p>[Website Link](https://golf-ball-customizer.fly.dev/) 
+  -- Note: This website's hosting is usually suspended to save money.</p>
 
 ## Features
 
