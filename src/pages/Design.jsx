@@ -71,6 +71,9 @@ const Design = () => {
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.5} />
                         <directionalLight position={[5, 5, 5]} intensity={1} />
+
+                        {/*<gridHelper args={[10, 10]} />*/}
+
                         <GolfBall
                             position={[0, 0, 0]}
                             scale={1}
