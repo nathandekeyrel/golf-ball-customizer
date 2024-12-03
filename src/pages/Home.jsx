@@ -42,7 +42,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="opacity-0 transition-opacity duration-700 ease-in-out hover:opacity-100">
+    <div className="opacity-0 transition-opacity duration-700 ease-in-out hover:opacity-100 overflow-x-hidden">
       <div className="w-full h-screen flex flex-col items-center justify-between relative">
         {/* Video at the top of the page */}
         <div className="video-container">
