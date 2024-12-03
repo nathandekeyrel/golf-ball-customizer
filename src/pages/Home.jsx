@@ -48,7 +48,6 @@ const Home = () => {
         <div className="video-container">
           <video autoPlay loop muted className="video-background">
             <source src="/images/golfvid.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
 
           <div className="text-overlay">
@@ -78,12 +77,16 @@ const Home = () => {
           <div className="centered-content">
             <div className="paragraph">
               <p>
-                Looking to make a lasting impression? Our bulk custom golf balls are the perfect solution for businesses, events, tournaments, or golf teams. Whether you’re outfitting your corporate outing, creating personalized gifts, or promoting your brand, our high-quality golf balls can be customized with your logo, design, or message.
+                Looking to make a lasting impression? Our bulk custom golf balls are the perfect solution for businesses, events, tournaments, or golf teams. Whether you’re outfitting your corporate outing, creating personalized gifts, or promoting your brand, our high-quality golf balls can be customized with your logo, or design.
               </p>
             </div>
             <img src="/images/balllllls.png" alt="Golf Ball" className="image" />
           </div>
         </div>
+
+        
+        
+        
 
         {/* 3D Model Canvas */}
         <div className="canvas-container w-full h-1/2 z-10 flex items-center justify-center">
@@ -123,6 +126,7 @@ const Home = () => {
       <h2>    </h2>
       <h2>    </h2>
       <h2></h2>
+      
       <h1>The End</h1>
     </div>
   );
