@@ -138,14 +138,12 @@ body {
   }
   
 
-  /* CSS for the scroll-based animation trigger */
 .scroll-animate {
   transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
   opacity: 0;
   transform: translateX(0);
 }
 
-/* When the element comes into view, animate it */
 .scroll-animate.animate-visible {
   opacity: 1;
 }
