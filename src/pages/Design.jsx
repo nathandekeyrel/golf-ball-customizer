@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import GolfBall from '../models/GolfBall';
+import '../styles/design.css';  
+
 
 const BRAND_PRICES = {
     'velocity': { price: 30, quantity: 12 },
