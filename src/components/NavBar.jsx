@@ -7,7 +7,7 @@ const Navbar = () => {
             <div>
                 <NavLink to="/" className="w-12 h-8 rounded-lg bg-white items-center justify-center flex font-bold shadow-md">
                     {/* Replace the "Home" text with an image */}
-                    <img src="/public/multi-color-dragon.svg" alt="ball" className="w-6 h-6" />
+                    <img src="/multi-color-dragon.svg" alt="ball" className="w-6 h-6" />
                     </NavLink>
             </div>
             <nav className="flex gap-7 font-medium">
