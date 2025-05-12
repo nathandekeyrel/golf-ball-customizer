@@ -4,8 +4,6 @@
 
 [Website](https://golf-ball-customizer.fly.dev/) 
 
-<p>  -- Note: This website's hosting is usually suspended to save money.</p>
-
 ## Features
 
 ### 3D Golf Ball Customization
